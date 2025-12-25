@@ -1,73 +1,100 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f4f8;
-  margin: 0;
-  padding: 0;
+/* Page Layout */
+.page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3e5f5, #e3f2fd);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 30px;
 }
 
-.container {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 500px;
-}
-
-nav {
-  margin-bottom: 15px;
-}
-
-nav a {
-  margin: 0 10px;
-  color: #6a1b9a;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
+/* Card */
+.read-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  width: 700px;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 h2 {
-  margin-bottom: 20px;
-  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #4a148c;
 }
 
-table {
+/* Empty state */
+.empty-text {
+  text-align: center;
+  color: #777;
+  font-size: 16px;
+}
+
+/* Table */
+.product-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-thead {
+.product-table thead {
   background-color: #6a1b9a;
-  color: #fff;
+  color: white;
 }
 
-th, td {
-  padding: 12px;
-  border: 1px solid #ddd;
+.product-table th,
+.product-table td {
+  padding: 14px;
   text-align: center;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+.product-table tbody tr {
+  transition: background 0.3s ease;
 }
 
-tbody tr:hover {
+.product-table tbody tr:hover {
   background-color: #f3e5f5;
 }
 
-td a {
-  color: #6a1b9a;
-  text-decoration: none;
-  font-weight: bold;
+/* Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-td a:hover {
-  text-decoration: underline;
+.btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.edit {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.btn.delete {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

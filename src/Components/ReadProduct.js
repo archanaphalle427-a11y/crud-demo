@@ -9,46 +9,43 @@ function ReadProducts() {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  
 
   return (
-    <div className="read-container">
-      <h2>Products List</h2>
-      {/* <div class="product">
-      <ul>
-        {products.map((p) => (
-          <li key={p.id}>
-            {p.name} - ${p.price}{" "}
-            <a href={`/update/${p.id}`}>Edit</a> |{" "}
-            <a href={`/delete/${p.id}`}>Delete</a>
-          </li>
-        ))}
-      </ul>
-      </div> */}
+    <div className="page-wrapper">
+      <div className="read-container">
+        <h2>📦 Products List</h2>
 
-       <table>
-    <thead>
-      <tr>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-    {products.map((p) => (
-      <tr key={p.id}>
-        <td>{p.name}</td>
-        <td>${p.price}</td>
+        {products.length === 0 ? (
+          <p className="empty-text">No products available</p>
+        ) : (
+          <table className="product-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
 
-        <td>
-         <a href={`/update/${p.id}`}>Edit</a> |{" "}
-          <a href={`/delete/${p.id}`}>Delete</a>
-        </td>
-      </tr>
-       ))}
-    </tbody>
-  </table>
-
+            <tbody>
+              {products.map((p) => (
+                <tr key={p.id}>
+                  <td>{p.name}</td>
+                  <td>₹ {p.price}</td>
+                  <td className="action-buttons">
+                    <a className="btn edit" href={`/update/${p.id}`}>
+                      Edit
+                    </a>
+                    <a className="btn delete" href={`/delete/${p.id}`}>
+                      Delete
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
   );
 }
