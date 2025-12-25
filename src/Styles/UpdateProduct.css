@@ -1,0 +1,49 @@
+.create-container {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.create-container input {
+  margin: 5px;
+  padding: 8px;
+}
+
+.update-container button {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+}
+.error {
+  color: #d32f2f;          /* red tone for visibility */
+  font-size: 0.9rem;       /* slightly smaller than input text */
+  margin-top: 4px;         /* space between input and error */
+  text-align: left;        /* align with input field */
+  font-weight: 500;        /* make it a bit bolder */
+}
+.update-container input {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.update-container button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #6a1b9a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.update-container button:hover {
+  background-color: #4a148c;
+}
+
